@@ -4,7 +4,7 @@ public class Problema3 {
 	public static int next(int[] arr, int n) {
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == n) {
-				return i + 1;
+				return arr[i + 1];
 			}
 			if (arr[arr.length - 1] == n) {
 				return -1;
@@ -15,6 +15,6 @@ public class Problema3 {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(next(new int[] { 1, 5, 6, 2, 7 }, 7));
+		System.out.println(next(new int[] { 1, 5, 7, 2, 6 }, 7));
 	}
 }

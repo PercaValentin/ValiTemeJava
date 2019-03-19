@@ -3,9 +3,9 @@ package aplicatiiEA;
 public class TestEA18 {
 	public static int countSums(int[] arr) {
 		int suma = 0;
-		fp: for (int i = 0; i < arr.length; i++) {
-			for (int j = i + 1; j < arr.length; j++) {
-				for (int k = j + 1; k < arr.length; k++) {
+		fp: for (int i = arr.length - 1; i >= 0; i++) {
+			for (int j = 0; j < i; j++) {
+				for (int k = j + 1; k < i; k++) {
 					if (arr[i] + arr[j] == arr[k]) {
 						suma++;
 						continue fp;

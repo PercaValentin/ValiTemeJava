@@ -5,8 +5,8 @@ public class TestEA23 {
 		input = input.trim();
 		String subString[] = input.split("[ ]");
 		String returnString = "";
-		if (input == "") {
-			return "";
+		if (input.length() == 0) {
+			return input;
 		}
 
 		for (int i = 0; i < subString.length; i++) {

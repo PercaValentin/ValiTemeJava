@@ -6,6 +6,7 @@ public class TestEA22 {
 			return 0;
 		}
 		input = input.replaceAll(" ", "");
+		// int nr = Integer.parseInt(s.trim()) -> se poate si asa in loc de replace.
 		int suma = 0;
 		String[] numbers = input.split("[,]+");
 		for (String nr : numbers) {

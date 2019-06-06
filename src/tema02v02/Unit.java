@@ -11,6 +11,11 @@ public abstract class Unit {
 		this.type = type;
 	}
 
+	@Override
+	public String toString() {
+		return (alive ? "" : "+") + name + "(" + getFirepower() + ")";
+	}
+
 	public abstract int getFirepower();
 
 	public boolean isAlive() {

@@ -1,13 +1,13 @@
 package tema02v02;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Army {
-	private Unit[] units;
+	private List<Unit> units = new ArrayList<>();
 
-	public Army(Unit[] units) {
-		super();
-		this.units = units;
+	public void addUnit(Unit unit) {
+		units.add(unit);
 	}
 
 	public int getFirepower() {
@@ -27,7 +27,7 @@ public class Army {
 
 	@Override
 	public String toString() {
-		return Arrays.toString(units);
+		return units.toString();
 
 	}
 

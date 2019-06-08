@@ -2,32 +2,30 @@ package tema02v02;
 
 public class ArmyClient {
 	public static void main(String[] args) {
-		Unit[] units1 = { new Soldat("Vali"), //
-				new Soldat("Giorge"), //
-				new Tank("Winner", 80, 800), //
-				new Tank("Winner2", 90, 900), //
-				new Submarine("Subm1", 50), //
-				new Submarine("Subm2", 80), //
-				new NaveRazboi("Nava1", 5, 20), //
-				new NaveRazboi("Nava2", 5, 25), //
-				new AvioaneLupta("Avion1", 5, 5), //
-				new AvioaneLupta("Avion2", 5, 4) };
+		Army army1 = new Army();
+		army1.addUnit(new Soldat("Ghita"));//
+		army1.addUnit(new Soldat("Ion"));//
+		army1.addUnit(new Submarine("Sub1", 50));//
+		army1.addUnit(new Submarine("Sub2", 60));//
+		army1.addUnit(new Tank("Tank1", 50, 100));//
+		army1.addUnit(new Tank("Tank 2", 50, 90));//
+		army1.addUnit(new NaveRazboi("Nava1", 4, 50));//
+		army1.addUnit(new NaveRazboi("Nava2", 5, 50));//
+		army1.addUnit(new AvioaneLupta("Av1", 10, 10)); //
+		army1.addUnit(new AvioaneLupta("Av2", 10, 10)); //
 
-		Unit[] units2 = { new Soldat("Vasile"), //
-				new Soldat("Ion"), //
-				new Tank("Panzer", 40, 500), //
-				new Tank("Tanc Rusesc", 50, 600), //
-				new Submarine("Subm3", 40), //
-				new Submarine("Subm4", 60), //
-				new NaveRazboi("Nava3", 3, 15), //
-				new NaveRazboi("Nava4", 2, 10), //
-				new AvioaneLupta("Avion3", 4, 4), //
-				new AvioaneLupta("Avion4", 3, 2)
+		Army army2 = new Army();
+		army2.addUnit(new Soldat("Vasi"));
+		army2.addUnit(new Soldat("Geo"));
+		army2.addUnit(new Submarine("Sub3", 40));//
+		army2.addUnit(new Submarine("Sub4", 40));//
+		army2.addUnit(new Tank("Tank3", 40, 80));//
+		army2.addUnit(new Tank("Tank4", 35, 70));//
+		army2.addUnit(new NaveRazboi("Nava3", 3, 45));//
+		army2.addUnit(new NaveRazboi("Nava4", 3, 40));//
+		army2.addUnit(new AvioaneLupta("Av3", 15, 10)); //
+		army2.addUnit(new AvioaneLupta("Av4", 12, 10)); //
 
-		};
-
-		Army army1 = new Army(units1);
-		Army army2 = new Army(units2);
 		System.out.println(army1.toString());
 		System.out.println(army2.toString());
 		System.out.println(army1.getFirepower());

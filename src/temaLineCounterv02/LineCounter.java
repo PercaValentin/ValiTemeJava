@@ -50,6 +50,9 @@ public class LineCounter {
 		if (params.isIgnoreSpaces()) {
 			lineCounter -= fh.getEmptyLineCounter();
 		}
+		if (params.isIgnoreComments()) {
+			lineCounter
+		}
 	}
 
 	@Override

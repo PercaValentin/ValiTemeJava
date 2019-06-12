@@ -1,0 +1,6 @@
+/message/changeLang=Change language
+/message/selectCurrentLanguage=Select current language
+/message/roamana = Romanian
+/message/engleza = English
+/message/params=The current language is {0} and the Language enumeration name is {1}
+/message/exit=Exit

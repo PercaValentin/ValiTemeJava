@@ -1,0 +1,44 @@
+Se doreste crearea unui framework care sa permita implementarea de aplicatii multilanguage, respectiv aplicatii in care se poate schimba dinamic limba in care se efectueaza interfata cu utilizatorul.
+Pentru aceasta se vor crea initial doua fisiere in format cheie=valoare care contin definitiile mesajelor in romana/engleza, astfel:
+
+messages_en.txt:
+/message/changeLang=Change language
+/message/selectCurrentLanguage=Select current language
+/message/romana=Romanian
+/message/engleza=English
+/message/params=The current language is {0} and the Language enumeration name is {1}
+/message/exit=Exit
+
+messages_ro.txt:
+/message/ changeLang=Schimba limba
+/message/selectCurrentLanguage=Selectati limba curenta
+/message/romana=Romana
+/message/engleza=Engleza
+/message/params=Limba curenta este {0} si numele corespunzator din enumeration-ul Language este {1}
+/message/exit=Exit
+
+Clasa care implementeaza framework-ul trebuie sa foloseasca datele din aceste fisiere pentru a afisa mesaje in limbi diferite.
+Ea va implementa interfata Localisation si se va folosi de enum-ul Language care vi se pun la dispozitie.
+Enum-ul Language contine limbile disponibile in sistem.
+
+Interfata Localisation cuprinde urmatoarele metode:
+
+getMessage(String key) primeste ca parametru o cheie si va returna mesajul corespunzator cheii respective in limba curenta. Daca mesajul nu exista in fisier atunci se va returna caracterul '!' concatenat cu cheia.
+
+getMessage(String key, Object[] params) pe langa functionalitatea metodei de mai sus primeste ca parametru un array de Object-uri care sunt folositi pentru a parametriza mesajul, astfel. Parametrul de pe pozitia 0 in array va inlocui un eventual string cu continutul {0} din traducerea cheii primite ca parametru, parametrul 1 va inlocui string-ul {1}, si asa mai departe.  
+
+setLanguage(Language lang) seteaza limba curenta.
+
+Sa se realizeze un mic program care demonstreaza functionalitatea interfetei astfel:
+Un meniu cu doua optiuni:
+1. Change language
+0. Exit
+Daca se alege 1 se afiseaza mesajul Select current language si se afiseaza dedesubt:
+1. Romanian 
+2. English
+0. Back
+Apoi se va alege 1 sau 2 in functie de dorinta utilizatorului iar dupa aceasta programul va continua dialogul cu utilizatorul in limba setata. La setarea limbii se va afisa un mesaj de forma: Limba curenta este Engleza si numele corespunzator din enumeration-ul Language este EN
+
+Meniul ruleaza pana cand se iese din el cu Exit.
+
+Pentru citirea fisierelor se sugereaza utilizarea clasei Properties.

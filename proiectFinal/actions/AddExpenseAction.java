@@ -1,6 +1,7 @@
 package actions;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import com.savnet.utils.demo.app.ApplicationSession;
 import com.savnet.utils.demo.app.Keyboard;
@@ -20,13 +21,14 @@ public class AddExpenseAction extends MenuItem {
 	public void doAction() {
 		Keyboard keyboard = ApplicationSession.getInstance().getKeyboard();
 		Database db = ApplicationSession.getInstance().getDatabase();
-		Date date = keyboard.("Date:");
-double sum = keyboard.("Sum:");
-String description = keyboard.getString("Description:");
-Category category = keyboard.("Category:");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM, dd, yyyy");
+		LocalDate date = LocalDate.parse(keyboard.getString("Date:"), formatter);
 
+		double sum = Double.parseDouble(keyboard.getString("Sum:"));
+		String description = keyboard.getString("Description:");
 
-	
+		Category category = new Category(keyboard.getString("Category:"));
+
 	}
 
 }

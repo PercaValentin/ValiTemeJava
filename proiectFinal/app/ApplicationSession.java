@@ -1,16 +1,12 @@
 package app;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
-import com.savnet.utils.demo.model.Database;
-import com.savnet.utils.demo.model.FileDatabase;
+import modelExpenses.Database;
+import modelExpenses.FileDatabase;
 
 public class ApplicationSession {
 	private Keyboard keyboard = new Keyboard();
 	private Database database = new FileDatabase();
 	private Serializer serializer = new Serializer();
-
 	private static ApplicationSession instance = new ApplicationSession();
 
 	public static ApplicationSession getInstance() {
@@ -27,19 +23,12 @@ public class ApplicationSession {
 
 	public Serializer getSerializer() {
 		return serializer;
+
 	}
 
 	public void init() {
-		try {
-			Database database = serializer.load();
-			this.database = database;
-		} catch (FileNotFoundException e) {
-			System.out.println("File does not exist. Continue...");
-		} catch (ClassNotFoundException e) {
-			throw new RuntimeException(e);
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
+try {
+	Database database = serializer.load();
+}
 	}
-
 }

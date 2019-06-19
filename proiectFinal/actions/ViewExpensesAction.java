@@ -1,10 +1,11 @@
 package actions;
 
+import app.ApplicationSession;
 import menu.MenuItem;
+import modelExpenses.Database;
+public class ViewExpensesAction extends MenuItem {
 
-public class ViewExepensesAction extends MenuItem {
-
-	public ViewExepensesAction(String option, String key) {
+	public ViewExpensesAction(String option, String key) {
 		super(option, key);
 
 	}

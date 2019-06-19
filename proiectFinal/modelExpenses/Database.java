@@ -6,16 +6,14 @@ public interface Database {
 
 	void addExpenses(Expenses expense);
 
-	List<Expenses> expenses;
+	List<Expenses> getExpenses();
 
 	void removeExpenses(Expenses expense);
 
 	void addCategory(Category name);
 
-	List<Category> categories;
+	List<Category> getCategories();
 
 	void removeCategory(Category name);
-
-	List<Expenses> getExpenses();
 
 }

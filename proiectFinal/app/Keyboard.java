@@ -1,4 +1,4 @@
-package keyboard;
+package app;
 
 import java.util.Scanner;
 

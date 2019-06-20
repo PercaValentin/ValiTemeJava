@@ -1,6 +1,7 @@
 package modelExpenses;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -79,5 +80,17 @@ public class FileDatabase implements Database, Serializable {
 			}
 			return nr;
 		}
+	}
+
+	@Override
+	public void addExpense(LocalDate date, double sum, String description, Category category) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Category getCategoryByName(String categoryName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

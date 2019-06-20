@@ -23,10 +23,8 @@ public class AddExpenseAction extends MenuItem {
 		Database db = ApplicationSession.getInstance().getDatabase();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM, dd, yyyy");
 		LocalDate date = LocalDate.parse(keyboard.getString("Date:"), formatter);
-
 		double sum = Double.parseDouble(keyboard.getString("Sum:"));
 		String description = keyboard.getString("Description:");
-
 		Category category = new Category(keyboard.getString("Category:"));
 
 	}

@@ -6,6 +6,7 @@ import java.util.Date;
 public class Expenses implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	private int id;
 	private Date date;
 	private double sum;
 	private String description;
@@ -47,6 +48,10 @@ public class Expenses implements Serializable {
 		if (Double.doubleToLongBits(sum) != Double.doubleToLongBits(other.sum))
 			return false;
 		return true;
+	}
+
+	public int getId() {
+		return id;
 	}
 
 	// public String getName() {

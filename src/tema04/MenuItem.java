@@ -11,8 +11,9 @@ public abstract class MenuItem {
 		this.option = option;
 	}
 
+	@Override
 	public String toString() {
-		return option + ". " + MultilanguageSession.mls.getMessage(key);
+		return "";// option + ". " + MultilanguageSession.mls.getMessage(key);
 
 	}
 

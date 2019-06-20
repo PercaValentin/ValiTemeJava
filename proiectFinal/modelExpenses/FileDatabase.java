@@ -32,9 +32,9 @@ public class FileDatabase implements Database, Serializable {
 
 		while (iterator.hasNext()) {
 			Expenses s = iterator.next();
-			if (s.getName().equals(name)) {
-				iterator.remove();
-			}
+//			if (s.getName().equals(name)) {
+//				iterator.remove();
+//			}
 		}
 
 	}
@@ -66,5 +66,18 @@ public class FileDatabase implements Database, Serializable {
 		}
 
 		ApplicationSession.getInstance().getSerializer().save(this);
+	}
+
+	public int getFirstFreeExpenseId() {
+		int nr = 0;
+		loop: while (true) {
+			for (Expenses e : expenses) {
+				if (e.getId() == nr) {
+					nr++;
+					continue loop;
+				}
+			}
+			return nr;
+		}
 	}
 }

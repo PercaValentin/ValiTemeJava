@@ -27,8 +27,6 @@ public class ApplicationSession {
 	}
 
 	public void init() {
-try {
-	Database database = serializer.load();
-}
+		database = serializer.load();
 	}
 }

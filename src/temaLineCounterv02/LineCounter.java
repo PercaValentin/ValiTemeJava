@@ -42,17 +42,17 @@ public class LineCounter {
 	}
 
 	private void handle(File file) {
-		fileCounter++;
-		FileHandler fh = new FileHandler(file);
-		fh.analyse();
-		lineCounter += fh.getLineCounter();
-
-		if (params.isIgnoreSpaces()) {
-			lineCounter -= fh.getEmptyLineCounter();
-		}
-		if (params.isIgnoreComments()) {
-			lineCounter
-		}
+//		fileCounter++;
+//		FileHandler fh = new FileHandler(file);
+//		fh.analyse();
+//		lineCounter += fh.getLineCounter();
+//
+//		if (params.isIgnoreSpaces()) {
+//			lineCounter -= fh.getEmptyLineCounter();
+//		}
+//		if (params.isIgnoreComments()) {
+//			lineCounter
+//		}
 	}
 
 	@Override

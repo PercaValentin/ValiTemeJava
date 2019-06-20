@@ -7,17 +7,25 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import com.savnet.utils.demo.model.Database;
+import modelExpenses.Database;
 
 public class Serializer {
 	private static final String DATABASE_FILE = "expenses.ser";
 
-	public Database load() throws FileNotFoundException, IOException, ClassNotFoundException {
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATABASE_FILE));
+	public Database load() {
+		Database result = null;
 
-		Database result = (Database) ois.readObject();
+		try {
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATABASE_FILE));
 
-		ois.close();
+			result = (Database) ois.readObject();
+
+			ois.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("Database file not found. Continue...");
+		} catch (IOException | ClassNotFoundException e) {
+			throw new RuntimeException(e);
+		}
 
 		return result;
 	}

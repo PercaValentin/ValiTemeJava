@@ -1,11 +1,11 @@
 package app;
 
-import com.savnet.utils.demo.actions.AddSupplierAction;
-import com.savnet.utils.demo.actions.RemoveSupplierAction;
-import com.savnet.utils.demo.actions.ViewSuppliersAction;
-import com.savnet.utils.menus.BackMenu;
-import com.savnet.utils.menus.Menu;
-import com.savnet.utils.menus.MenuItem;
+import actions.AddExpenseAction;
+import actions.RemoveExpensesAction;
+import actions.ViewExpensesAction;
+import menu.BackMenu;
+import menu.Menu;
+import menu.MenuItem;
 
 public class Application {
 	public static void main(String[] args) {
@@ -17,18 +17,20 @@ public class Application {
 	private void run() {
 		Menu mainMenu = new Menu("", "");
 
-		Menu furnizori = new Menu("3", "Suppliers");
-		MenuItem addFurnizori = new AddSupplierAction("1", "Add");
-		MenuItem removeFurnizori = new RemoveSupplierAction("2", "Remove");
-		MenuItem viewFurnizori = new ViewSuppliersAction("3", "View");
+		Menu expenses = new Menu("1", "Expenses");
+		MenuItem addExpenses = new AddExpenseAction("1", "Add");
+		MenuItem removeExpenses = new RemoveExpensesAction("2", "Remove");
+		MenuItem viewExpenses = new ViewExpensesAction("3", "View");
 		BackMenu back = new BackMenu("0", "Back");
-		furnizori.addMenuItem(addFurnizori);
-		furnizori.addMenuItem(removeFurnizori);
-		furnizori.addMenuItem(viewFurnizori);
-		furnizori.addMenuItem(back);
-		furnizori.setBackAction(back);
+		expenses.addMenuItem(addExpenses);
+		expenses.addMenuItem(removeExpenses);
+		expenses.addMenuItem(viewExpenses);
+		expenses.addMenuItem(back);
+		expenses.setBackAction(back);
+		// Menu categories = new Menu("2", "Categories");
+		// MenuItem addCategories = new
 
-		mainMenu.addMenuItem(furnizori);
+		mainMenu.addMenuItem(expenses);
 		mainMenu.addMenuItem(back);
 		mainMenu.setBackAction(back);
 

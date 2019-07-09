@@ -8,6 +8,10 @@ public class Category {
 		this.name = name;
 	}
 
+	public String getCategory() {
+		return name;
+	}
+
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;

@@ -1,6 +1,5 @@
 package modelExpenses2;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import modelExpenses.Category;
@@ -18,9 +17,9 @@ public interface Database {
 
 	List<Category> getCategories();
 
-	void removeCategory(Category name);
+	// void removeCategory(Category name);
 
-	void addExpense(LocalDate date, double sum, String description, Category category);
+	// void addExpense(LocalDate date, double sum, String description, Category
+	// category);
 
-	Category getCategoryByName(String categoryName);
 }

@@ -1,16 +1,13 @@
 package modelExpenses2;
 
-import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import app.ApplicationSession;
+import appExpenses.ApplicationSession;
 import modelExpenses.Category;
 import modelExpenses.Expenses;
 
-public class FileDatabase implements Database, Serializable {
+public class FileDatabase implements Database {
 
 	private List<Expenses> expenses = new ArrayList<>();
 	private List<Category> categories = new ArrayList<>();
@@ -31,7 +28,6 @@ public class FileDatabase implements Database, Serializable {
 
 	@Override
 	public void removeExpenses(Expenses expense) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -49,33 +45,6 @@ public class FileDatabase implements Database, Serializable {
 		return categories;
 	}
 
-	@Override
-	public void removeCategory(Category name) {
-		Iterator<Category> iterator = categories.iterator();
-
-		while (iterator.hasNext()) {
-			Category s = iterator.next();
-			if (s.getCategory().equals(name)) {
-				iterator.remove();
-			}
-		}
-
-		ApplicationSession.getInstance().getSerializer().save(this);
-
-	}
-
-	@Override
-	public void addExpense(LocalDate date, double sum, String description, Category category) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Category getCategoryByName(String categoryName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public int getFirstFreeExpenseId() {
 		int nr = 0;
 		loop: while (true) {
@@ -88,4 +57,5 @@ public class FileDatabase implements Database, Serializable {
 			return nr;
 		}
 	}
+
 }

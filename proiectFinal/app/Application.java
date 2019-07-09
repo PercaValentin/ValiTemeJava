@@ -16,8 +16,9 @@ public class Application {
 
 	private void run() {
 		Menu mainMenu = new Menu("", "");
-
-		Menu expenses = new Menu("1", "Expenses");
+		Menu categories = new Menu("1", "Categories");
+		// MenuItem addCategory = new
+		Menu expenses = new Menu("2", "Expenses");
 		MenuItem addExpenses = new AddExpenseAction("1", "Add");
 		MenuItem removeExpenses = new RemoveExpensesAction("2", "Remove");
 		MenuItem viewExpenses = new ViewExpensesAction("3", "View");

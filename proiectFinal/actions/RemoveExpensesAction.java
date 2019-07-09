@@ -11,7 +11,6 @@ public class RemoveExpensesAction extends MenuItem {
 
 	@Override
 	public void doAction() {
-		// TODO Auto-generated method stub
 
 	}
 

@@ -1,11 +1,10 @@
 package modelExpenses2;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import appExpenses.ApplicationSession;
-import modelExpenses.Category;
-import modelExpenses.Expenses;
 
 public class FileDatabase implements Database {
 
@@ -22,7 +21,6 @@ public class FileDatabase implements Database {
 
 	@Override
 	public List<Expenses> getExpenses() {
-
 		return expenses;
 	}
 
@@ -45,17 +43,32 @@ public class FileDatabase implements Database {
 		return categories;
 	}
 
-	public int getFirstFreeExpenseId() {
-		int nr = 0;
-		loop: while (true) {
-			for (Expenses e : expenses) {
-				if (e.getId() == nr) {
-					nr++;
-					continue loop;
-				}
-			}
-			return nr;
-		}
+//	public int getFirstFreeExpenseId() {
+//		int nr = 0;
+//		loop: while (true) {
+//			for (Expenses e : expenses) {
+//				if (e.getID() == nr) {
+//					nr++;
+//					continue loop;
+//				}
+//			}
+//			return nr;
+//		}
+//	}
+
+	@Override
+	public Category getCategoryByName(String name) {
+
+		return null;
+	}
+
+	@Override
+	public void addExpenses(Date date, double sum, String description, Category category) {
+
+		Expenses expense = new Expenses(date, sum, description, category);
+		expenses.add(expense);
+		System.out.println(expense);
+		ApplicationSession.getInstance().getSerializer().save(this);
 	}
 
 }

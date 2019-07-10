@@ -6,17 +6,15 @@ import java.util.Date;
 public class Expenses implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int ID;
-	private int id;
+
 	private Date date;
 	private double sum;
 	private String description;
 	private Category category;
 
-	public Expenses(int iD, int id2, Date date, double sum, String description, Category category) {
+	public Expenses(Date date, double sum, String description, Category category) {
 		super();
-		ID = iD;
-		id = id2;
+
 		this.date = date;
 		this.sum = sum;
 		this.description = description;
@@ -32,7 +30,10 @@ public class Expenses implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Expenses other = (Expenses) obj;
-		if (ID != other.ID)
+		if (category == null) {
+			if (other.category != null)
+				return false;
+		} else if (!category.equals(other.category))
 			return false;
 		if (date == null) {
 			if (other.date != null)
@@ -44,20 +45,14 @@ public class Expenses implements Serializable {
 				return false;
 		} else if (!description.equals(other.description))
 			return false;
-		if (id != other.id)
-			return false;
 		if (Double.doubleToLongBits(sum) != Double.doubleToLongBits(other.sum))
 			return false;
 		return true;
 	}
 
-	public int getID() {
-		return ID;
-	}
-
 	@Override
 	public String toString() {
-		return "Expenses [ID=" + ID + ", id=" + id + ", date=" + date + ", sum=" + sum + ", description=" + description
+		return "Expenses [date=" + date + ", sum=" + sum + ", description=" + description + ", category=" + category
 				+ "]";
 	}
 
